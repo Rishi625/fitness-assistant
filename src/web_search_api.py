@@ -16,5 +16,3 @@ class BingSearch:
         response.raise_for_status()
         search_results = response.json()
         return search_results
-
-    
