@@ -20,7 +20,7 @@ export const SearchBar = () => {
         handleChange(query)
     }
     return (
-        <div className="app-container">
+
         <div className="input-wrapper">
             <FaSearch className="search-icon" />
             <input 
@@ -30,7 +30,6 @@ export const SearchBar = () => {
             onChange={(e) => setQuery(e.target.value)}/>
             <div className="search-button-container" > <button className="search-button" onClick={handleClick}>Search</button></div>
             <div className='search-results'></div>
-        </div>
         </div>
     );
 }
