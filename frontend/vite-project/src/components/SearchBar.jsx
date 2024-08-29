@@ -33,3 +33,4 @@ export const SearchBar = () => {
         </div>
     );
 }
+
