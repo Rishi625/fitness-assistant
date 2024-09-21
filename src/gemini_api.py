@@ -1,12 +1,17 @@
-import google.generativeai as genai
 import os
+import google.generativeai as genai
 
 class GeminiApi:
-    def gemini_api(self):
-        genai.configure(api_key=os.environ["API_Key"])
-        response = genai.generate_text(prompt="write a story about andrej karpathy")
-        return response.result
+    def __init__(self):
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            raise ValueError("GEMINI_API_KEY environment variable is not set")
+        genai.configure(api_key=api_key)
 
-gemini_api_instance = GeminiApi()
-output = gemini_api_instance.gemini_api()
-print(output)
+    def generate_response(self, prompt):
+        try:
+            response = genai.generate_text(prompt=prompt)
+            return response.result
+        except Exception as e:
+            print(f"An error occurred while generating response: {e}")
+            return None
