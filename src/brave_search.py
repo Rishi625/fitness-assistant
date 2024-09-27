@@ -1,13 +1,13 @@
 import requests
 import os
 
-
 def parse_brave_search_results(search_results):
     if search_results is None:
         return None
     results = search_results.get("web", {}).get("results", [])
     if len(results) == 0:
         return None
+    print("Found {} results".format(len(results)))
     return results
 
 def brave_search(query, count=10):

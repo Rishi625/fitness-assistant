@@ -1,9 +1,14 @@
+from typing import List, Any
+
 import requests
 from bs4 import BeautifulSoup
 
 def web_scraper(urls):
+    print("This is the original url:",urls)
+    url_data = []
+    url_data.append(urls)
     scraped_data = []
-    for url in urls:
+    for url in url_data:
         try:
             response = requests.get(url)
             response.raise_for_status()
