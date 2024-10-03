@@ -16,7 +16,7 @@ class FollowUpHandler:
             'sleep_quality': ['poor', 'fair', 'good', 'excellent']
         }
 
-        # Add more complex patterns for natural language questions
+        # complex patterns for natural language questions
         self.question_patterns = [
             (r"(?i)what (?:is|are) your (\w+(?:\s+\w+)*)", "general"),
             (r"(?i)how much (\w+(?:\s+\w+)*) would you like", "goal"),
@@ -57,7 +57,6 @@ class FollowUpHandler:
                 options = self.common_fitness_attributes[info]
                 display_name = ' '.join(info.split('_')).title()
 
-                # Create a more user-friendly label
                 if info == 'weight_loss_goal':
                     label = "How much weight would you like to lose?"
                 elif info == 'target_timeline':
