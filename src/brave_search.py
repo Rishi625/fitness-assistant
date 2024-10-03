@@ -1,6 +1,7 @@
 import requests
 import os
 
+
 def parse_brave_search_results(search_results):
     if search_results is None:
         return None
@@ -10,19 +11,20 @@ def parse_brave_search_results(search_results):
     print("Found {} results".format(len(results)))
     return results
 
+
 def brave_search(query, count=10):
     base_url = "https://api.search.brave.com/res/v1/web/search"
-    
+
     headers = {
         "Accept": "application/json",
         "X-Subscription-Token": os.getenv('BRAVE_API_KEY')
     }
-    
+
     params = {
         "q": query,
         "count": count,
     }
-    
+
     try:
         response = requests.get(base_url, headers=headers, params=params)
         response.raise_for_status()

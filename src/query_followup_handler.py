@@ -16,7 +16,7 @@ class FollowUpHandler:
             'sleep_quality': ['poor', 'fair', 'good', 'excellent']
         }
 
-        # complex patterns for natural language questions
+        # ::complex patterns for natural language questions
         self.question_patterns = [
             (r"(?i)what (?:is|are) your (\w+(?:\s+\w+)*)", "general"),
             (r"(?i)how much (\w+(?:\s+\w+)*) would you like", "goal"),
