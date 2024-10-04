@@ -102,16 +102,11 @@ if st.session_state.step >= 1 and st.session_state.user_info:
                     with st.spinner("Generating your personalized plan..."):
                         formatted_query = format_follow_up_response(user_info['query'], additional_inputs)
 
-                        # Debug information
-                        with st.expander("Debug Information"):
-                            st.write("Query sent to Gemini:")
-                            st.code(formatted_query)
-
                         try:
                             final_response = gemini_api.generate_response(formatted_query)
 
                             if final_response and final_response.strip():
-                                st.subheader("Your Personalized Fitness Plan")
+                                st.subheader("Your Personalized Plan")
                                 st.write(final_response)
                                 st.session_state.step = 3
                             else:
