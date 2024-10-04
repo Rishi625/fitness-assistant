@@ -1,5 +1,5 @@
 from .web_search_api import BingSearch
-from assets.fitness_websites import 
+
 
 bing_search = BingSearch()
 
@@ -13,6 +13,5 @@ def search_web(queries):
     return results
 
 
-def filter_results(results):
 
 
